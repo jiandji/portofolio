@@ -36,11 +36,13 @@ const HelpsContent = ({ theme }) => {
     setIsLoading(true);
 
     try {
-      // Pastikan URL ini sesuai dengan backend Anda (misal http://127.0.0.1:8000/api/chat)
-      const response = await fetch("http://127.0.0.1:8000/api/chat", {
+      // ip devices
+      const response = await fetch("/api/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMsg.text }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: input }),
       });
 
       const data = await response.json();
