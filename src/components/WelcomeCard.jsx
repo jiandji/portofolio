@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; // 1. Import motion
+import { motion } from "framer-motion";
 
 // --- ASSETS ---
 import donwloads from "../assets/items/download.png";
@@ -32,7 +32,7 @@ const WelcomeCard = ({ theme, onNavigate }) => {
       initial={{ scale: 0.8, opacity: 0, y: 50 }}
       animate={{ scale: 1, opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.175, 0.885, 0.32, 1.275] }}
-      className="relative w-full max-w-3xl h-auto rounded-[15px] shadow-2xl flex flex-col justify-center items-center overflow-hidden px-6 py-12 md:px-12 md:py-24"
+      className="relative w-[90vw] md:w-full md:max-w-3xl h-auto rounded-[15px] shadow-2xl flex flex-col justify-center items-center overflow-hidden px-6 py-8 md:px-12 md:py-24"
       style={{
         backgroundColor: theme.card_color,
         border: `2px solid ${theme.border_line_card}`,
@@ -41,7 +41,11 @@ const WelcomeCard = ({ theme, onNavigate }) => {
     >
       {/* Btn Resume */}
       <div
-        className="absolute md:top-10 md:left-10 flex items-center gap-3 cursor-pointer group transition-all hover:-translate-y-1 hover:opacity-70 duration-300 ease"
+        className="
+          relative mb-6 
+          md:absolute md:top-10 md:left-10 md:mb-0 
+          flex items-center gap-3 cursor-pointer group transition-all hover:-translate-y-1 hover:opacity-70 duration-300 ease
+        "
         onClick={handleDownloadCV}
       >
         <div className="w-10 h-10 border-2 border-dashed rounded-xl flex items-center justify-center">
@@ -62,31 +66,29 @@ const WelcomeCard = ({ theme, onNavigate }) => {
         </span>
       </div>
 
-      {/* Name */}
-      <div className="text-center mt-18 mb-14">
+      <div className="text-center mt-2 mb-8 md:mt-18 md:mb-14">
         <h1
-          className="text-5xl md:text-6xl font-bold tracking-tight mb-2"
+          className="text-4xl md:text-6xl font-bold tracking-tight mb-2"
           style={{ color: theme.text, transition: "all 0.2s ease" }}
         >
           hello! <span style={{ color: theme.accent }}>i'm jinji</span>
         </h1>
         <p
-          className="text-lg pt-4 md:text-[15.5px] font-light opacity-60 tracking-wide"
+          className="text-sm md:text-[15.5px] font-light opacity-60 tracking-wide px-2"
           style={{ color: theme.text }}
         >
           Machine Learning Engineer and Cloud Engineer
         </p>
       </div>
 
-      {/* Icons Menu */}
-      <div className="flex justify-center gap-5">
+      <div className="grid grid-cols-3 gap-6 w-full place-items-center md:flex md:justify-center md:gap-5 md:w-auto">
         {menuItems.map((item) => (
           <div
             key={item.id}
             className="group flex flex-col items-center gap-1 cursor-pointer"
             onClick={() => onNavigate && onNavigate(item.id)}
           >
-            <div className="w-[90px] h-[90px] flex justify-center items-center">
+            <div className="w-[60px] h-[60px] md:w-[90px] md:h-[90px] flex justify-center items-center">
               <img
                 src={item.icon}
                 alt={item.label}
@@ -97,7 +99,7 @@ const WelcomeCard = ({ theme, onNavigate }) => {
 
             {/* Label Text */}
             <span
-              className="text-[0.85rem] font-medium transition-opacity group-hover:opacity-70"
+              className="text-[0.75rem] md:text-[0.85rem] font-medium transition-opacity group-hover:opacity-70"
               style={{ color: theme.text }}
             >
               {item.label}

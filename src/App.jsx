@@ -1,7 +1,7 @@
 // --- ESSENTIALS ---
 import React, { useState, useEffect } from "react";
 import Wave from "react-wavify";
-//import "./styles/App.css";
+import { AnimatePresence } from "framer-motion";
 
 // --- FSX ---
 import ReactHowler from "react-howler";
@@ -165,7 +165,7 @@ function App() {
 
   const renderContent = () => {
     return (
-      <>
+      <AnimatePresence mode="wait">
         {openMenus.includes("about") && (
           <BaseCard
             key="about"
@@ -237,7 +237,7 @@ function App() {
             <HelpsContent theme={currentTheme} />
           </BaseCard>
         )}
-      </>
+      </AnimatePresence>
     );
   };
 
@@ -329,16 +329,18 @@ function App() {
           </Wave>
         </div>
 
-        <div className="absolute bottom-0 w-full z-20 pointer-events-auto">
-          <Footer theme={currentTheme} />
-        </div>
-        {/* Bear */}
-        <div className="absolute bottom-0 right-6 z-20 pointer-events-auto cursor-pointer transition-transform duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:scale-95">
-          <div className="w-[100px] h-auto" onClick={() => setShowCard(true)}>
-            <img
-              src={bear}
-              alt="Mascot Menu"
-              className={`
+        {/* Footer */}
+        <div className="absolute bottom-0 w-full z-999 pointer-events-none">
+          <div className="absolute bottom-0 w-full pointer-events-auto">
+            <Footer theme={currentTheme} />
+          </div>
+          {/* Bear */}
+          <div className="hidden md:block absolute bottom-0 right-6 z-20 pointer-events-auto cursor-pointer transition-transform duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:scale-95">
+            <div className="w-[100px] h-auto" onClick={() => setShowCard(true)}>
+              <img
+                src={bear}
+                alt="Mascot Menu"
+                className={`
         w-full h-auto block transition-[filter,drop-shadow] duration-500 ease-in-out
         ${
           isDarkMode
@@ -346,21 +348,22 @@ function App() {
             : "drop-shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
         }
       `}
-            />
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Welcome Card */}
-      {showCard && (
-        <div className="fixed inset-0 z-50 flex justify-center items-center">
-          <WelcomeCard
-            onClose={() => setShowCard(false)}
-            theme={currentTheme}
-            onNavigate={handleNavigation}
-          />
-        </div>
-      )}
+        {/* Welcome Card */}
+        {showCard && (
+          <div className="fixed inset-0 z-50 flex justify-center items-center">
+            <WelcomeCard
+              onClose={() => setShowCard(false)}
+              theme={currentTheme}
+              onNavigate={handleNavigation}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
