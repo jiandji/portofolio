@@ -1,16 +1,53 @@
-# React + Vite
+# 🍃 Welcome to Arrafi's Portofolio Website! 🏝️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> *"Welcome, traveler! Make yourself at home in my little corner of the internet."* 🐻✨
 
-Currently, two official plugins are available:
+Hello! This is the source code for my personal portfolio website. It's designed to feel like a cozy **NookPhone App** or a digital diary, featuring a chatty AI assistant, and a showcase of my projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with love, code, and a sweaty.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎒 What's Inside? (Features)
 
-## Expanding the ESLint configuration
+* **🤖 NookBot (AI Assistant):** A smart chatbot powered by **Google Gemini AI** that acts like my digital receptionist. Ask it anything about my skills or favorite foods!
+* **📂 Project Museum:** A masonry-style gallery showcasing my works (Web, Mobile, Data Engineering).
+* **🌗 Day & Night Cycle:** Toggle between "Warm Morning" ☀️ and "Cozy Night" 🌙 themes (Dark/Light mode).
+* **🔊 Interactive SFX:** Satisfying click and hover sounds (ASMR for devs!).
+* **📱 Responsive Design:** A greedy looks like a nook-phone app frome animal crossing, actually can check it now.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ The DIY Recipe (Tech Stack)
+
+Here are the materials I used to craft this island:
+
+**🎨 Frontend ( The Island View ):**
+* **React.js + Vite** (Super fast!)
+* 🎨 **CSS3** (Custom styling, no bulky frameworks)
+* ✨ **Framer Motion** (For those smooth animations)
+
+**🧠 Backend ( The Town Hall ):**
+* **Python**
+* ⚡ **FastAPI** (Handling requests like Dodo Airlines)
+* 🤖 **Google Generative AI (Gemini 1.5 Flash)** (The brain behind JinjiBot)
+
+---
+
+## ✈️ How to Visit (Installation)
+
+Want to run this locally on your machine? Follow these steps, Island Representative!
+
+### 1. Clone the Island
+```bash
+git clone [https://github.com/jiandji/portofolio.git](https://github.com/jiandji/portofolio.git)
+cd portofolio
+```
+
+### 2. Use docker compose 
+```bash
+open docker desktop
+cd portofolio
+docker compose up
+open locally in browser
+```
