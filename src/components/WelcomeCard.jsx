@@ -12,8 +12,8 @@ import helpsIcon from "../assets/menu_logo/helps.png";
 
 const handleDownloadCV = () => {
   const link = document.createElement("a");
-  link.href = "/Arrafi Aji CV's updated.pdf";
-  link.download = "Arrafi Aji CV's updated.pdf";
+  link.href = "/ARRAFI ADJIE PAMUNGKAS_RESUME.pdf";
+  link.download = "ARRAFI ADJIE PAMUNGKAS_RESUME.pdf";
   link.click();
 };
 

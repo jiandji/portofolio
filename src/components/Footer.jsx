@@ -31,7 +31,7 @@ const Footer = ({ theme }) => {
         </a>
 
         {/* Youtube */}
-        <a href="https://www.youtube.com/@jiandji">
+        <a href="">
           <img
             src={youtube}
             alt="Youtube"
