@@ -1,0 +1,52 @@
+# ============================================================
+# FRONTEND: React + Vite dev server (image dari Dockerfile.frontend)
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: porto-lab
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: monet1/portofolio-fe:latest # tag awal utk bootstrap; CI override ke :<sha>
+          imagePullPolicy: Always # selalu tarik versi terbaru dari Docker Hub
+          ports:
+            - containerPort: 5173 # port default Vite dev server
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          readinessProbe:
+            tcpSocket:
+              port: 5173
+            initialDelaySeconds: 10
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: porto-lab
+spec:
+  selector:
+    app: frontend
+  ports:
+    - name: http
+      port: 80 # Service dengarkan di 80...
+      targetPort: 5173 # ...lalu teruskan ke 5173 di dalam pod
+  type: ClusterIP

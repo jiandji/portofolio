@@ -30,29 +30,57 @@ const HelpsContent = ({ theme }) => {
     e.preventDefault();
     if (!input.trim()) return;
 
+    // Snapshot history SEBELUM pesan baru ditambahkan (dikirim ke backend buat memori percakapan)
+    const history = messages.map((m) => ({ sender: m.sender, text: m.text }));
+
     const userMsg = { id: Date.now(), sender: "user", text: input };
     setMessages((prev) => [...prev, userMsg]);
+    const currentInput = input;
     setInput("");
     setIsLoading(true);
 
     try {
-      // ip devices
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ message: currentInput, history }),
       });
 
-      const data = await response.json();
+      if (!response.ok || !response.body) {
+        throw new Error(`Bad response: ${response.status}`);
+      }
 
-      const botMsg = {
-        id: Date.now() + 1,
-        sender: "bot",
-        text: data.reply || "Maaf, ada gangguan sinyal... 📡",
-      };
-      setMessages((prev) => [...prev, botMsg]);
+      // --- STREAMING: baca jawaban token demi token ---
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let acc = "";
+      let botId = null;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        acc += decoder.decode(value, { stream: true });
+        if (botId === null) {
+          // chunk pertama tiba: matikan indikator loading & buat bubble bot
+          botId = Date.now() + 1;
+          setIsLoading(false);
+          setMessages((prev) => [...prev, { id: botId, sender: "bot", text: acc }]);
+        } else {
+          setMessages((prev) =>
+            prev.map((m) => (m.id === botId ? { ...m, text: acc } : m))
+          );
+        }
+      }
+
+      // Tidak ada teks sama sekali yang datang
+      if (botId === null) {
+        setMessages((prev) => [
+          ...prev,
+          { id: Date.now() + 1, sender: "bot", text: "Maaf, ada gangguan sinyal... 📡" },
+        ]);
+      }
     } catch (error) {
       console.error("Error:", error);
       const errorMsg = {

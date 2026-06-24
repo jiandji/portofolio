@@ -1,0 +1,9 @@
+# Namespace: "ruangan" terpisah di cluster supaya resource lab tidak campur
+# dengan resource lain. Semua manifest lab memakai namespace ini.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: porto-lab
+  labels:
+    app: portofolio
+    env: lab

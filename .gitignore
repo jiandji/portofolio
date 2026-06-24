@@ -31,3 +31,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Src - Assets
+src/cv/
+
+# Kubernetes lab - jangan commit secret asli
+k8s/secret.yaml

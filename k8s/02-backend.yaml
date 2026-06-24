@@ -1,0 +1,69 @@
+# ============================================================
+# BACKEND: FastAPI + Gemini (image dari Dockerfile.backend)
+# ============================================================
+# Deployment = "resep" yang menjaga sejumlah Pod backend tetap hidup.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: porto-lab
+  labels:
+    app: backend
+spec:
+  replicas: 1 # mulai dari 1 pod; nanti kita scale di Lab 6
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: monet1/portofolio-be:latest # tag awal utk bootstrap; CI override ke :<sha>
+          imagePullPolicy: Always # selalu tarik versi terbaru dari Docker Hub
+          ports:
+            - containerPort: 8000
+          env:
+            # API key TIDAK ditaruh di image. Diambil dari Secret saat runtime.
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: gemini-secret
+                  key: GEMINI_API_KEY
+          resources:
+            requests: # jatah minimum yang dijamin
+              cpu: "100m"
+              memory: "256Mi"
+            limits: # batas maksimum (dibunuh kalau lewat)
+              cpu: "500m"
+              memory: "512Mi"
+          # Probe pakai TCP karena app tidak punya endpoint /health khusus.
+          readinessProbe: # "siap terima traffic?"
+            tcpSocket:
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe: # "masih hidup? kalau macet, restart"
+            tcpSocket:
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+---
+# Service = alamat internal stabil untuk Pod backend.
+# Namanya "backend" + port 8000 => cocok dengan proxy di vite.config.js
+# (http://backend:8000) berkat DNS internal Kubernetes.
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: porto-lab
+spec:
+  selector:
+    app: backend
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+  type: ClusterIP # hanya bisa diakses dari dalam cluster

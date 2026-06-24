@@ -1,0 +1,24 @@
+# ============================================================
+# HPA (HorizontalPodAutoscaler): auto scale jumlah pod backend
+# berdasarkan pemakaian CPU. (Lab 8 - opsional)
+# ============================================================
+# Butuh metrics-server aktif:  minikube addons enable metrics-server
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: backend-hpa
+  namespace: porto-lab
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: backend
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 50 # kalau CPU rata-rata > 50%, tambah pod

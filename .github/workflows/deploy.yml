@@ -1,0 +1,35 @@
+name: portofolio
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    env:
+      KUBECONFIG: /home/ubuntu/.kube/config
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build docker image
+        run: |
+          echo "Build docker image for fe dan be.."
+          docker build -f Dockerfile.backend -t monet1/portofolio-be:${{ github.sha }} .
+          docker build -t Dockerfile.frontend -t monet1/portofolio-fe:${{ github.sha }} .
+
+      - name: Push docker image to registry container
+        run: |
+          echo "Push docker image to registry.."
+          docker push monet1/portofolio-be:${{ github.sha }} 
+          docker push monet1/portofolio-fe:${{ github.sha }}
+      - name: Update deployment k3s
+        run: |
+          echo "Update deploy k3s.."
+          kubectl set image deployment/backend  backend=monet1/portofolio-be:${{ github.sha }} -n porto-lab
+          kubectl set image deployment/frontend frontend=monet1/portofolio-fe:${{ github.sha }} -n porto-lab
+
+          kubectl rollout status deployment/backend -n porto-lab
+          kubectl rollout status deployment/frontend -n porto-lab

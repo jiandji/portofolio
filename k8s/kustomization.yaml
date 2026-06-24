@@ -1,0 +1,14 @@
+# Daftar resource yang di-apply saat menjalankan:  kubectl apply -k k8s/
+#
+# CATATAN: secret.example.yaml SENGAJA tidak dimasukkan di sini supaya
+# placeholder key palsu tidak ikut ter-apply. Secret asli dibuat manual via CLI
+# (lihat README / secret.example.yaml).
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 00-namespace.yaml
+  - 02-backend.yaml
+  - 03-frontend.yaml
+  - 04-ingress.yaml
+  # - 05-hpa.yaml   # opsional: aktifkan kalau metrics-server sudah ada
