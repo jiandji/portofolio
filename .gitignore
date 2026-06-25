@@ -37,3 +37,4 @@ src/cv/
 
 # Kubernetes lab - jangan commit secret asli
 k8s/secret.yaml
+k8s/kustomization.yaml
