@@ -18,7 +18,7 @@ jobs:
         run: |
           echo "Build docker image for fe dan be.."
           docker build -f Dockerfile.backend -t monet1/portofolio-be:${{ github.sha }} .
-          docker build -t Dockerfile.frontend -t monet1/portofolio-fe:${{ github.sha }} .
+          docker build -f Dockerfile.frontend -t monet1/portofolio-fe:${{ github.sha }} .
 
       - name: Push docker image to registry container
         run: |
