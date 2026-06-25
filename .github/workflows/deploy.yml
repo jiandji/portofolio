@@ -17,14 +17,14 @@ jobs:
       - name: Build docker image
         run: |
           echo "Build docker image for fe dan be.."
-          docker build -f Dockerfile.backend -t monet1/portofolio-be:${{ github.sha }} .
-          docker build -f Dockerfile.frontend -t monet1/portofolio-fe:${{ github.sha }} .
+          docker build -f Dockerfile.backend -t monet1/portofolio-be:${{ github.sha }} -t monet1/portofolio-be:latest .
+          docker build -f Dockerfile.frontend -t monet1/portofolio-fe:${{ github.sha }} -t monet1/portofolio-fe:latest .
 
       - name: Push docker image to registry container
         run: |
           echo "Push docker image to registry.."
-          docker push monet1/portofolio-be:${{ github.sha }} 
-          docker push monet1/portofolio-fe:${{ github.sha }}
+          docker push -a monet1/portofolio-be
+          docker push -a monet1/portofolio-fe
       - name: "Apply k3s manifests.."
         run: |
           kubectl apply -k k8s/
