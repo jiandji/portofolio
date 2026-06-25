@@ -23,7 +23,7 @@ spec:
           image: monet1/portofolio-fe:latest # tag awal utk bootstrap; CI override ke :<sha>
           imagePullPolicy: Always # selalu tarik versi terbaru dari Docker Hub
           ports:
-            - containerPort: 5173 # port default Vite dev server
+            - containerPort: 80 # port default Vite dev server
           resources:
             requests:
               cpu: "100m"
@@ -33,7 +33,7 @@ spec:
               memory: "512Mi"
           readinessProbe:
             tcpSocket:
-              port: 5173
+              port: 80
             initialDelaySeconds: 10
             periodSeconds: 10
 ---
@@ -48,5 +48,5 @@ spec:
   ports:
     - name: http
       port: 80 # Service dengarkan di 80...
-      targetPort: 5173 # ...lalu teruskan ke 5173 di dalam pod
+      targetPort: 80
   type: ClusterIP
