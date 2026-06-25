@@ -25,6 +25,9 @@ jobs:
           echo "Push docker image to registry.."
           docker push monet1/portofolio-be:${{ github.sha }} 
           docker push monet1/portofolio-fe:${{ github.sha }}
+      - name: "Apply k3s manifests.."
+        run: |
+          kubectl apply -k k8s/
       - name: Update deployment k3s
         run: |
           echo "Update deploy k3s.."
