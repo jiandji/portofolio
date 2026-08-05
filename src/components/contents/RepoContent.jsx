@@ -9,6 +9,7 @@ import olx from "../../assets/repo_projects/olx.png";
 import airbnb from "../../assets/repo_projects/airbnb.png";
 import aws from "../../assets/repo_projects/aws.png";
 import machineLearning from "../../assets/repo_projects/ml.png";
+import SPOD from "../../assets/repo_projects/spod_news.png";
 
 // --- IMPORT CERTIFICATES ---
 import dataScience from "../../assets/repo_certificate/ds.png";
@@ -23,14 +24,16 @@ const RepoContent = ({ theme }) => {
   const toolsList = [
     "Git",
     "VScode",
-    "JupyterNb",
+    "Notebook",
     "Figma",
-    "Canva",
     "Google Console",
     "AWS Services",
-    "Adobe Premiere",
-    "Capcut",
-    "Microsoft",
+    "Proxmox",
+    "Linux",
+    "Docker",
+    "Kubernetes",
+    "Grafana",
+    "DGX-LLM Local",
   ];
 
   // Data Development
@@ -41,7 +44,7 @@ const RepoContent = ({ theme }) => {
     "HTML/CSS",
     "React",
     "Golang",
-    "Next.js",
+    "CI/CD",
   ];
 
   const certification = [
@@ -151,6 +154,15 @@ const RepoContent = ({ theme }) => {
       link: "#",
       btnText: "See Demo",
     },
+    {
+      id: 8,
+      title: "News Scraping Automation",
+      image: SPOD,
+      desc: "Automated data pipeline that scrapes, cleans, and processes news articles from 1,000+ websites using Python and Apache Airflow for scalable and scheduled data collection.",
+      tech: "Python • Apache Airflow •  Newspaper3k • pandas • Docker • MinIO • PostgreSQL",
+      link: "#",
+      btnText: "See Demo",
+    },
   ];
 
   // Reusable Styles
@@ -174,9 +186,9 @@ const RepoContent = ({ theme }) => {
       >
         <p>
           <strong>Accepting work offers!</strong>
-          <br />I focus on building robust machine learning models, as well as
-          designing and developing web and mobile applications. You can contact
-          me via the details below. ^^
+          <br />I focus on building robust machine learning models pipeline to
+          deployment, as well as designing and developing web and mobile
+          applications. You can contact me via the details below. ^^
         </p>
       </div>
 
@@ -238,7 +250,10 @@ const RepoContent = ({ theme }) => {
         }}
       />
 
-      <h3 className={groupTitleClass} style={{ color: theme.text_secondary_color }}>
+      <h3
+        className={groupTitleClass}
+        style={{ color: theme.text_secondary_color }}
+      >
         PROJECTS
       </h3>
 
@@ -294,7 +309,10 @@ const RepoContent = ({ theme }) => {
         }}
       />
 
-      <h3 className={groupTitleClass} style={{ color: theme.text_secondary_color }}>
+      <h3
+        className={groupTitleClass}
+        style={{ color: theme.text_secondary_color }}
+      >
         CERTIFICATIONS
       </h3>
 

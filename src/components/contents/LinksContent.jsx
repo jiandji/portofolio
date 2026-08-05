@@ -50,7 +50,6 @@ const LinksContent = ({ theme }) => {
     {
       id: 5,
       name: "Youtube",
-      url: "https://www.youtube.com/@jiandji",
       icon: APP_ICONS.youtube,
       bg: "#FFEBEE",
     },

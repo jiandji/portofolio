@@ -4,11 +4,11 @@ import myPhoto from "../../assets/myphoto.jpeg";
 const AboutContent = ({ theme }) => {
   const skills = [
     { name: "Machine Learning", level: "90%", color: "#FF9A8B" },
-    { name: "Cloud & Network", level: "80%", color: "#F4D35E" },
-    { name: "Python & SQL", level: "95%", color: "#95D5B2" },
+    { name: "Infra & Cloud", level: "75%", color: "#F4D35E" },
+    { name: "Python & Automation", level: "80%", color: "#95D5B2" },
     { name: "Web Development", level: "75%", color: "#7DD3FC" },
-    { name: "Aws", level: "80%", color: "#F993CEFF" },
-    { name: "Oracle Cloud", level: "85%", color: "#EB7699FF" },
+    { name: "ETL Data Pipeline", level: "85%", color: "#F993CEFF" },
+    { name: "Data AI Integration", level: "80%", color: "#EB7699FF" },
     { name: "Problem Solving", level: "99%", color: "#A172E2FF" },
   ];
 
@@ -35,7 +35,7 @@ const AboutContent = ({ theme }) => {
               className="m-[2px_0_0_0] text-[0.85rem] font-semibold opacity-90"
               style={{ color: theme.accent_color }}
             >
-              ML & Cloud Engineer
+              ML & Data Engineer
             </p>
           </div>
 
@@ -47,8 +47,7 @@ const AboutContent = ({ theme }) => {
               borderColor: theme.text_color,
             }}
           >
-            "Hobby do some explore-code, analyst data, investment dan manhwas
-            addict."
+            "Building AI systems & debugging bad life decisions"
           </div>
         </div>
 

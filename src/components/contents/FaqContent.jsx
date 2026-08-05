@@ -13,15 +13,15 @@ const FAQContent = ({ theme }) => {
     },
     {
       id: 2,
-      question: "Are you open to freelance?",
+      question: "What do you specialize in?",
       answer:
-        "Yes! I am currently open for freelance projects, especially related to Machine Learning integration or Web Development. Hit me up via email!",
+        "I specialize in AI and Machine Learning, particularly NLP, data pipelines, model deployment, and scalable automation systems.",
     },
     {
       id: 3,
-      question: "What is your favorite coffee?",
+      question: "What kind of projects have you worked on?",
       answer:
-        "Iced Americano, no sugar. I like the bitter coffee. Just like how Warriors makes it at The Tavern ☕.",
+        "I have worked on news scraping automation, NLP systems, machine learning pipelines, monitoring dashboards, and infrastructure for deploying data-driven applications.",
     },
     {
       id: 4,
@@ -31,9 +31,9 @@ const FAQContent = ({ theme }) => {
     },
     {
       id: 5,
-      question: "Do you play some games?",
+      question: "Can you deploy machine learning systems?",
       answer:
-        "I already sold my soul into Riot Games 💀. So, i just play League and other variaty games for fun.",
+        "Yes. I can handle the process from data preparation and model development to containerization, workflow orchestration, CI/CD, and server deployment.",
     },
     {
       id: 6,
@@ -42,9 +42,15 @@ const FAQContent = ({ theme }) => {
     },
     {
       id: 7,
-      question: "Read some books?",
+      question: "Are you open to new opportunities?",
       answer:
-        "Yes obviously, but not that much. I just like read some world-wide tech news, books of investment, and manhwas",
+        "Yes. I am open to opportunities related to AI Engineering, Machine Learning, Data Science, MLOps, and Data Engineering. (Also Infrastructure Operations / DevOps)",
+    },
+    {
+      id: 8,
+      question: "Have you handled large-scale data pipelines?",
+      answer:
+        "Yes. I built an automated pipeline that collects, stores, and processes news articles from more than 1,000 websites using Python, Newspaper3k, and Apache Airflow.",
     },
   ];
 
@@ -88,7 +94,9 @@ const FAQContent = ({ theme }) => {
                   <IoHelpBuoyOutline
                     className="text-[1.1rem] flex-shrink-0"
                     style={{
-                      color: isOpen ? theme.accent_color : theme.text_secondary_color,
+                      color: isOpen
+                        ? theme.accent_color
+                        : theme.text_secondary_color,
                     }}
                   />
                   <span
