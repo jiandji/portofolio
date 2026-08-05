@@ -42,16 +42,11 @@ const EmailContent = ({ theme }) => {
     }
   };
 
-  const inputBgColor =
-    theme.bg === "#fff" || theme.bg === "#FFFBF0"
-      ? "#F5F5F5"
-      : "rgba(255,255,255,0.1)";
-
   return (
     <div className="w-[400px] max-w-[90vw] flex flex-col gap-4 p-5 font-['Manrope']">
       <div
         className="text-[0.7rem] font-extrabold tracking-widest opacity-60 uppercase text-center mb-1"
-        style={{ color: theme.textSecondary }}
+        style={{ color: theme.text_secondary_color }}
       >
         [SEND A CARD]
       </div>
@@ -61,7 +56,7 @@ const EmailContent = ({ theme }) => {
         <div className="relative flex items-center">
           <IoPerson
             className="absolute left-3 text-[1.1rem] z-10" // .input-icon
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           />
           <input
             type="text"
@@ -70,8 +65,8 @@ const EmailContent = ({ theme }) => {
             required
             className="w-full p-3 pl-10 border-none rounded-xl text-[0.85rem] outline-none transition-shadow duration-200 focus:ring-2 focus:ring-black/10 placeholder:opacity-50"
             style={{
-              backgroundColor: inputBgColor,
-              color: theme.text,
+              backgroundColor: theme.input_bg_color,
+              color: theme.text_color,
             }}
           />
         </div>
@@ -80,7 +75,7 @@ const EmailContent = ({ theme }) => {
         <div className="relative flex items-center">
           <IoMail
             className="absolute left-3 text-[1.1rem] z-10"
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           />
           <input
             type="email"
@@ -89,8 +84,8 @@ const EmailContent = ({ theme }) => {
             required
             className="w-full p-3 pl-10 border-none rounded-xl text-[0.85rem] outline-none transition-shadow duration-200 focus:ring-2 focus:ring-black/10 placeholder:opacity-50"
             style={{
-              backgroundColor: inputBgColor,
-              color: theme.text,
+              backgroundColor: theme.input_bg_color,
+              color: theme.text_color,
             }}
           />
         </div>
@@ -100,7 +95,7 @@ const EmailContent = ({ theme }) => {
         <div className="relative flex items-start">
           <IoCreate
             className="absolute left-3 top-3 text-[1.1rem] z-10" // .input-icon.top-align
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           />
           <textarea
             name="message"
@@ -108,8 +103,8 @@ const EmailContent = ({ theme }) => {
             required
             className="w-full p-3 pl-10 border-none rounded-xl text-[0.85rem] outline-none transition-shadow duration-200 focus:ring-2 focus:ring-black/10 placeholder:opacity-50 min-h-[100px] resize-none"
             style={{
-              backgroundColor: inputBgColor,
-              color: theme.text,
+              backgroundColor: theme.input_bg_color,
+              color: theme.text_color,
             }}
           />
         </div>
@@ -122,7 +117,7 @@ const EmailContent = ({ theme }) => {
           className="mt-2.5 p-3 border-none rounded-xl text-sm font-extrabold cursor-pointer flex items-center justify-center gap-2 shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
           disabled={status === "sending" || status === "success"}
           style={{
-            backgroundColor: status === "success" ? "#78DD62" : theme.accent,
+            backgroundColor: status === "success" ? "#78DD62" : theme.accent_color,
             color: "#fff",
           }}
         >
@@ -139,7 +134,7 @@ const EmailContent = ({ theme }) => {
         {status === "success" && (
           <div
             className="text-[0.7rem] text-center italic opacity-80"
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           >
             *Orville has delivered your mail!
           </div>

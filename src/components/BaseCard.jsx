@@ -30,26 +30,26 @@ const BaseCard = ({
         }`}
         style={{
           backgroundColor: theme.card_color,
-          color: theme.text,
+          color: theme.text_color,
           ...style,
         }}
       >
         <div
           className="card-header flex-shrink-0 flex justify-between items-center w-full px-6 py-5 border-b-2 border-dashed select-none box-border"
           style={{
-            borderColor: theme.border_line_card,
+            borderColor: theme.borderline_card_color,
           }}
         >
           <span
             className="font-extrabold tracking-widest uppercase text-[0.9rem]"
-            style={{ color: theme.text }}
+            style={{ color: theme.text_color }}
           >
             {title}
           </span>
           <div
             className="cursor-pointer text-[1.4rem] font-bold hover:opacity-60 transition-opacity p-1"
             onClick={onClose}
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           >
             ✕
           </div>
@@ -82,8 +82,8 @@ const BaseCard = ({
           }`}
           style={{
             backgroundColor: theme.card_color,
-            borderColor: theme.border_line_card,
-            color: theme.text,
+            borderColor: theme.borderline_card_color,
+            color: theme.text_color,
             transition: "background-color 0.3s, border-color 0.3s, color 0.3s",
             ...style,
           }}
@@ -92,19 +92,19 @@ const BaseCard = ({
           <div
             className="card-header flex justify-between items-center w-full px-5 py-3 border-b-2 border-dashed select-none box-border"
             style={{
-              borderColor: theme.border_line_card,
+              borderColor: theme.borderline_card_color,
             }}
           >
             <span
               className="font-extrabold tracking-widest uppercase text-[0.85rem]"
-              style={{ color: theme.text }}
+              style={{ color: theme.text_color }}
             >
               {title}
             </span>
             <div
               className="cursor-pointer text-[1.2rem] font-bold hover:opacity-60 transition-opacity"
               onClick={onClose}
-              style={{ color: theme.textSecondary }}
+              style={{ color: theme.text_secondary_color }}
               onMouseDown={(e) => e.stopPropagation()}
             >
               ✕

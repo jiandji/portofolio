@@ -49,7 +49,7 @@ const SwitchDarkMode = ({ theme, isDarkMode, toggleTheme }) => {
             ? "-translate-y-[200%] opacity-0"
             : "translate-y-0 opacity-100"
         }`}
-        style={{ filter: theme.iconFilter }}
+        style={{ filter: theme.icon_filter_color }}
       />
 
       {/* Moon icons */}
@@ -61,7 +61,7 @@ const SwitchDarkMode = ({ theme, isDarkMode, toggleTheme }) => {
             ? "translate-y-0 opacity-100"
             : "translate-y-[200%] opacity-0"
         }`}
-        style={{ filter: theme.iconFilter }}
+        style={{ filter: theme.icon_filter_color }}
       />
     </div>
   );
@@ -74,9 +74,9 @@ const MusicPlay = ({ theme, isPlaying, toggleMusic }) => {
       onClick={toggleMusic}
       className="w-10 h-10 flex justify-center items-center rounded-full border-2 cursor-pointer text-[1.2rem] flex-shrink-0 transition-transform duration-200 ease-out hover:scale-110"
       style={{
-        borderColor: theme.text,
-        color: theme.text,
-        backgroundColor: isPlaying ? theme.highlight : "transparent",
+        borderColor: theme.text_color,
+        color: theme.text_color,
+        backgroundColor: isPlaying ? theme.highlight_color : "transparent",
         transitionProperty: "transform, background-color",
         transitionDuration: "0.2s",
       }}
@@ -246,8 +246,8 @@ function App() {
     <div
       className="fixed inset-0 w-screen h-screen overflow-hidden -z-50"
       style={{
-        backgroundColor: currentTheme.bg,
-        color: currentTheme.text,
+        backgroundColor: currentTheme.bg_color,
+        color: currentTheme.text_color,
         transition: "all 0.5s ease",
       }}
     >
@@ -287,7 +287,7 @@ function App() {
         {/* Highlight Wave */}
         <div className="absolute bottom-0 left-0 w-full h-[39vh] opacity-70 blur-xl">
           <Wave
-            fill={currentTheme.highlight}
+            fill={currentTheme.highlight_color}
             paused={false}
             style={{ display: "flex", height: "100%" }}
             options={{
@@ -316,12 +316,12 @@ function App() {
               <linearGradient id="gradient" gradientTransform="rotate(90)">
                 <stop
                   offset="0%"
-                  stopColor={currentTheme.waveTop}
+                  stopColor={currentTheme.wave_top_color}
                   style={{ transition: "stop-color 0.5s ease" }}
                 />
                 <stop
                   offset="100%"
-                  stopColor={currentTheme.waveBot}
+                  stopColor={currentTheme.wave_bot_color}
                   style={{ transition: "stop-color 0.5s ease" }}
                 />
               </linearGradient>

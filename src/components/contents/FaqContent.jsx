@@ -58,7 +58,7 @@ const FAQContent = ({ theme }) => {
     <div className="w-[400px] max-w-[90vw] h-auto flex flex-col gap-[15px] font-['Manrope'] p-[20px] box-border max-[450px]:w-full">
       <div
         className="text-[0.7rem] font-extrabold tracking-[1px] opacity-60 uppercase mb-[5px] text-center"
-        style={{ color: theme.textSecondary }}
+        style={{ color: theme.text_secondary_color }}
       >
         [RESCUE SERVICE FAQ]
       </div>
@@ -75,11 +75,11 @@ const FAQContent = ({ theme }) => {
               onClick={() => toggleFAQ(item.id)}
               style={{
                 backgroundColor: isOpen
-                  ? theme.highlight + "20"
+                  ? theme.highlight_color
                   : "rgba(0,0,0,0.02)",
 
                 borderColor: isOpen
-                  ? theme.border_line_card || "#ccc"
+                  ? theme.borderline_card_color || "#ccc"
                   : "transparent",
               }}
             >
@@ -88,12 +88,12 @@ const FAQContent = ({ theme }) => {
                   <IoHelpBuoyOutline
                     className="text-[1.1rem] flex-shrink-0"
                     style={{
-                      color: isOpen ? theme.accent : theme.textSecondary,
+                      color: isOpen ? theme.accent_color : theme.text_secondary_color,
                     }}
                   />
                   <span
                     style={{
-                      color: theme.text,
+                      color: theme.text_color,
                       fontWeight: isOpen ? 800 : 600,
                     }}
                   >
@@ -104,7 +104,7 @@ const FAQContent = ({ theme }) => {
                 <motion.div
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  style={{ color: theme.textSecondary }}
+                  style={{ color: theme.text_secondary_color }}
                 >
                   <IoChevronDown />
                 </motion.div>
@@ -122,8 +122,8 @@ const FAQContent = ({ theme }) => {
                     <div
                       className="p-[15px] m-[0_10px_10px_10px] text-[0.8rem] leading-[1.5] font-['Manrope'] bg-white/30 rounded-b-lg"
                       style={{
-                        color: theme.textSecondary,
-                        borderTop: `1px dashed ${theme.border_line_card}`,
+                        color: theme.text_secondary_color,
+                        borderTop: `1px dashed ${theme.borderline_card_color}`,
                       }}
                     >
                       {item.answer}
@@ -138,7 +138,7 @@ const FAQContent = ({ theme }) => {
 
       <div
         className="text-center text-[0.7rem] italic opacity-50 mt-[10px]"
-        style={{ color: theme.textSecondary }}
+        style={{ color: theme.text_secondary_color }}
       >
         "Operator is standing by..."
       </div>

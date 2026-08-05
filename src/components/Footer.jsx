@@ -16,7 +16,7 @@ const Footer = ({ theme }) => {
             src={instagram}
             alt="Instagram"
             className="hidden md:flex w-5 h-5  opacity-45 transition-transform duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:scale-[1.2] hover:rotate-12"
-            style={{ filter: theme.iconFilter }}
+            style={{ filter: theme.icon_filter_color }}
           />
         </a>
 
@@ -26,7 +26,7 @@ const Footer = ({ theme }) => {
             src={linkedin}
             alt="LinkedIn"
             className="hidden md:flex w-5 h-5 opacity-45 transition-transform duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:scale-[1.2] hover:rotate-12"
-            style={{ filter: theme.iconFilter }}
+            style={{ filter: theme.icon_filter_color }}
           />
         </a>
 
@@ -36,7 +36,7 @@ const Footer = ({ theme }) => {
             src={youtube}
             alt="Youtube"
             className="hidden md:flex w-5 h-5 opacity-45 transition-transform duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:scale-[1.2] hover:rotate-12"
-            style={{ filter: theme.iconFilter }}
+            style={{ filter: theme.icon_filter_color }}
           />
         </a>
       </div>
@@ -45,7 +45,7 @@ const Footer = ({ theme }) => {
       <p
         className="mt-2 text-xs opacity-70 transition-colors duration-500 ease-out"
         style={{
-          color: theme.textSecondary,
+          color: theme.text_secondary_color,
         }}
       >
         © 2025 Arrafi Pamungkas

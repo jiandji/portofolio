@@ -18,7 +18,7 @@ const AboutContent = ({ theme }) => {
         <div className="flex-1 flex flex-col justify-center gap-2 min-w-0 w-full sm:w-auto">
           <div
             className="font-extrabold text-[0.7rem] tracking-widest opacity-60 uppercase"
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           >
             [DATA ISLE RESIDENT]
           </div>
@@ -26,14 +26,14 @@ const AboutContent = ({ theme }) => {
           <div className="flex flex-col">
             <h2
               className="m-0 text-[1.3rem] font-extrabold leading-[1.2]"
-              style={{ color: theme.text }}
+              style={{ color: theme.text_color }}
             >
               Arrafi Aji Pamungkas
             </h2>
 
             <p
               className="m-[2px_0_0_0] text-[0.85rem] font-semibold opacity-90"
-              style={{ color: theme.accent }}
+              style={{ color: theme.accent_color }}
             >
               ML & Cloud Engineer
             </p>
@@ -42,9 +42,9 @@ const AboutContent = ({ theme }) => {
           <div
             className="mt-[5px] p-[8px_10px] rounded-md italic text-[0.75rem] leading-[1.3] border-t-[3px] sm:border-t-0 sm:border-l-[3px]"
             style={{
-              backgroundColor: theme.bg,
-              color: theme.textSecondary,
-              borderColor: theme.text,
+              backgroundColor: theme.bg_color,
+              color: theme.text_secondary_color,
+              borderColor: theme.text_color,
             }}
           >
             "Hobby do some explore-code, analyst data, investment dan manhwas
@@ -56,8 +56,8 @@ const AboutContent = ({ theme }) => {
           <div
             className="w-[80px] h-[100px] rounded-lg border-[3px] border-solid overflow-hidden shadow-md bg-white"
             style={{
-              backgroundColor: theme.bg,
-              borderColor: theme.text,
+              backgroundColor: theme.bg_color,
+              borderColor: theme.text_color,
             }}
           >
             <img
@@ -69,7 +69,7 @@ const AboutContent = ({ theme }) => {
 
           <div
             className="mt-[5px] text-center text-[0.6rem] font-bold tracking-widest opacity-50"
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           >
             FOTO PROFIL
           </div>
@@ -80,14 +80,14 @@ const AboutContent = ({ theme }) => {
 
       <div
         className="w-full border-b-[2px] border-dashed opacity-40 my-[5px]"
-        style={{ borderColor: theme.border_line_card || "#ccc" }}
+        style={{ borderColor: theme.borderline_card_color || "#ccc" }}
       ></div>
 
       {/* .skills-section */}
       <div className="flex flex-col gap-[10px]">
         <div
           className="mb-[5px] font-extrabold text-[0.75rem] tracking-widest uppercase opacity-70"
-          style={{ color: theme.text }}
+          style={{ color: theme.text_color }}
         >
           ISLAND SKILLS & ACHIEVEMENTS
         </div>
@@ -104,13 +104,13 @@ const AboutContent = ({ theme }) => {
                   className="w-[6px] h-[6px] rounded-full flex-shrink-0"
                   style={{ backgroundColor: skill.color }}
                 ></div>
-                <span style={{ color: theme.text }}>{skill.name}</span>
+                <span style={{ color: theme.text_color }}>{skill.name}</span>
               </div>
 
               {/* Bar Progress (.bar-container) */}
               <div
                 className="flex-1 h-[8px] rounded-[4px] relative"
-                style={{ backgroundColor: theme.bg }}
+                style={{ backgroundColor: theme.bg_color }}
               >
                 {/* .bar-fill */}
                 <div
@@ -123,7 +123,7 @@ const AboutContent = ({ theme }) => {
                 {/* .percent-text */}
                 <span
                   className="absolute -right-[35px] -top-[2px] text-[0.7rem] font-bold w-[30px] text-left"
-                  style={{ color: theme.textSecondary }}
+                  style={{ color: theme.text_secondary_color }}
                 >
                   {skill.level}
                 </span>
@@ -135,7 +135,7 @@ const AboutContent = ({ theme }) => {
 
       <div
         className="text-right text-[0.7rem] font-bold opacity-40 mt-[5px]"
-        style={{ color: theme.textSecondary }}
+        style={{ color: theme.text_secondary_color }}
       >
         [Stamp: Approved by Nook]
       </div>

@@ -35,7 +35,7 @@ const WelcomeCard = ({ theme, onNavigate }) => {
       className="relative w-[90vw] md:w-full md:max-w-3xl h-auto rounded-[15px] shadow-2xl flex flex-col justify-center items-center overflow-hidden px-6 py-8 md:px-12 md:py-24"
       style={{
         backgroundColor: theme.card_color,
-        border: `2px solid ${theme.border_line_card}`,
+        border: `2px solid ${theme.borderline_card_color}`,
         boxShadow: "0 20px 60px -15px rgba(0, 0, 0, 0.1)",
       }}
     >
@@ -54,14 +54,14 @@ const WelcomeCard = ({ theme, onNavigate }) => {
             alt="dl"
             className="w-5 h-5"
             style={{
-              borderColor: theme.text,
-              color: theme.text,
-              filter: theme.iconFilter,
+              borderColor: theme.text_color,
+              color: theme.text_color,
+              filter: theme.icon_filter_color,
               transition: "all 0.3s ease",
             }}
           />
         </div>
-        <span className="font-semibold text-lg" style={{ color: theme.text }}>
+        <span className="font-semibold text-lg" style={{ color: theme.text_color }}>
           Resume
         </span>
       </div>
@@ -69,13 +69,13 @@ const WelcomeCard = ({ theme, onNavigate }) => {
       <div className="text-center mt-2 mb-8 md:mt-18 md:mb-14">
         <h1
           className="text-4xl md:text-6xl font-bold tracking-tight mb-2"
-          style={{ color: theme.text, transition: "all 0.2s ease" }}
+          style={{ color: theme.text_color, transition: "all 0.2s ease" }}
         >
-          hello! <span style={{ color: theme.accent }}>i'm jinji</span>
+          hello! <span style={{ color: theme.accent_color }}>i'm jinji</span>
         </h1>
         <p
           className="text-sm md:text-[15.5px] font-light opacity-60 tracking-wide px-2"
-          style={{ color: theme.text }}
+          style={{ color: theme.text_color }}
         >
           Machine Learning Engineer and Cloud Engineer
         </p>
@@ -93,14 +93,14 @@ const WelcomeCard = ({ theme, onNavigate }) => {
                 src={item.icon}
                 alt={item.label}
                 className="max-w-[160%] max-h-[160%] object-contain block transition-transform duration-300 ease-out group-hover:-translate-y-2.5 group-hover:scale-[1.15] group-hover:opacity-70"
-                style={{ filter: theme.iconFilter }}
+                style={{ filter: theme.icon_filter_color }}
               />
             </div>
 
             {/* Label Text */}
             <span
               className="text-[0.75rem] md:text-[0.85rem] font-medium transition-opacity group-hover:opacity-70"
-              style={{ color: theme.text }}
+              style={{ color: theme.text_color }}
             >
               {item.label}
             </span>

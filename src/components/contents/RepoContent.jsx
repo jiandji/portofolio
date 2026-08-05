@@ -162,14 +162,14 @@ const RepoContent = ({ theme }) => {
     // WRAPPER SCROLL
     <div
       className="h-[60vh] w-[1000px] max-w-[90vw] overflow-y-auto px-[30px] py-[25px] box-border text-left max-[650px]:h-full max-[650px]:p-5 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-current [&::-webkit-scrollbar-thumb]:opacity-30 [&::-webkit-scrollbar-thumb]:rounded-full"
-      style={{ color: theme.text }}
+      style={{ color: theme.text_color }}
     >
       <div
         className="p-4 mb-8 rounded text-left"
         style={{
-          borderLeft: `5px solid ${theme.accent}`,
-          backgroundColor: theme.highlight,
-          color: theme.text,
+          borderLeft: `5px solid ${theme.accent_color}`,
+          backgroundColor: theme.highlight_color,
+          color: theme.text_color,
         }}
       >
         <p>
@@ -184,7 +184,7 @@ const RepoContent = ({ theme }) => {
         <div className="flex-1 min-w-[200px] flex flex-col items-start">
           <h3
             className={groupTitleClass}
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           >
             TOOLS
           </h3>
@@ -194,10 +194,10 @@ const RepoContent = ({ theme }) => {
                 key={idx}
                 className="inline-block bg-transparent border rounded-md px-3.5 py-2 text-sm font-semibold cursor-pointer select-none transition-all duration-100 ease-in-out hover:-translate-y-0.5 hover:opacity-80 active:translate-y-1 active:shadow-none"
                 style={{
-                  borderColor: theme.border_line_card,
-                  color: theme.buttonTextRepo,
+                  borderColor: theme.borderline_card_color,
+                  color: theme.text_color,
 
-                  boxShadow: `2px 4px 0px ${theme.border_line_card}`,
+                  boxShadow: `2px 4px 0px ${theme.borderline_card_color}`,
                 }}
               >
                 {item}
@@ -209,7 +209,7 @@ const RepoContent = ({ theme }) => {
         <div className="flex-1 min-w-[200px] flex flex-col items-start">
           <h3
             className={groupTitleClass}
-            style={{ color: theme.textSecondary }}
+            style={{ color: theme.text_secondary_color }}
           >
             DEVELOPMENT
           </h3>
@@ -219,9 +219,9 @@ const RepoContent = ({ theme }) => {
                 key={idx}
                 className="inline-block bg-transparent border rounded-md px-3.5 py-2 text-sm font-semibold cursor-pointer select-none transition-all duration-100 ease-in-out hover:-translate-y-0.5 hover:opacity-80 active:translate-y-1 active:shadow-none"
                 style={{
-                  borderColor: theme.border_line_card,
-                  color: theme.buttonTextRepo,
-                  boxShadow: `2px 4px 0px ${theme.border_line_card}`,
+                  borderColor: theme.borderline_card_color,
+                  color: theme.text_color,
+                  boxShadow: `2px 4px 0px ${theme.borderline_card_color}`,
                 }}
               >
                 {item}
@@ -234,11 +234,11 @@ const RepoContent = ({ theme }) => {
       <hr
         className={dividerClass}
         style={{
-          borderColor: theme.border_line_card,
+          borderColor: theme.borderline_card_color,
         }}
       />
 
-      <h3 className={groupTitleClass} style={{ color: theme.textSecondary }}>
+      <h3 className={groupTitleClass} style={{ color: theme.text_secondary_color }}>
         PROJECTS
       </h3>
 
@@ -254,8 +254,8 @@ const RepoContent = ({ theme }) => {
                 alt={item.title}
                 className="w-full h-auto rounded-lg shadow-[4px_4px_0px_rgba(0,0,0,0.1)] border-2"
                 style={{
-                  borderColor: theme.border_line_card,
-                  backgroundColor: theme.highlight,
+                  borderColor: theme.borderline_card_color,
+                  backgroundColor: theme.highlight_color,
                 }}
               />
             </div>
@@ -263,21 +263,21 @@ const RepoContent = ({ theme }) => {
             <div className="flex-1 flex flex-col gap-2 items-start">
               <h2
                 className="m-0 text-[1.4rem] font-extrabold"
-                style={{ color: theme.accent }}
+                style={{ color: theme.accent_color }}
               >
                 {item.title}
               </h2>
 
               <p
                 className="text-[0.95rem] leading-relaxed m-0"
-                style={{ color: theme.text, opacity: 0.85 }}
+                style={{ color: theme.text_color, opacity: 0.85 }}
               >
                 {item.desc}
               </p>
 
               <div
                 className="text-[0.85rem] opacity-70 mt-1"
-                style={{ color: theme.textSecondary }}
+                style={{ color: theme.text_secondary_color }}
               >
                 <span>tech: {item.tech}</span>
                 <br />
@@ -290,11 +290,11 @@ const RepoContent = ({ theme }) => {
       <hr
         className={dividerClass}
         style={{
-          borderColor: theme.border_line_card,
+          borderColor: theme.borderline_card_color,
         }}
       />
 
-      <h3 className={groupTitleClass} style={{ color: theme.textSecondary }}>
+      <h3 className={groupTitleClass} style={{ color: theme.text_secondary_color }}>
         CERTIFICATIONS
       </h3>
 
@@ -310,8 +310,8 @@ const RepoContent = ({ theme }) => {
                 alt={item.title}
                 className="w-full h-auto rounded-lg shadow-[4px_4px_0px_rgba(0,0,0,0.1)] border-2"
                 style={{
-                  borderColor: theme.border_line_card,
-                  backgroundColor: theme.highlight,
+                  borderColor: theme.borderline_card_color,
+                  backgroundColor: theme.highlight_color,
                 }}
               />
             </div>
@@ -319,21 +319,21 @@ const RepoContent = ({ theme }) => {
             <div className="flex-1 flex flex-col gap-2 items-start">
               <h2
                 className="m-0 text-[1.4rem] font-extrabold"
-                style={{ color: theme.accent }}
+                style={{ color: theme.accent_color }}
               >
                 {item.title}
               </h2>
 
               <p
                 className="text-[0.95rem] leading-relaxed m-0"
-                style={{ color: theme.text, opacity: 0.85 }}
+                style={{ color: theme.text_color, opacity: 0.85 }}
               >
                 {item.desc}
               </p>
 
               <div
                 className="text-[0.85rem] opacity-70 mt-1"
-                style={{ color: theme.textSecondary }}
+                style={{ color: theme.text_secondary_color }}
               >
                 <span>issued by: {item.issued}</span>
                 <br />
@@ -345,8 +345,8 @@ const RepoContent = ({ theme }) => {
       <div
         className="mt-[60px] pt-[30px] pb-5 text-center text-[0.95rem] font-medium opacity-90 tracking-[0.5px]"
         style={{
-          borderTop: `2px dashed ${theme.border_line_card}`,
-          borderColor: theme.border_line_card,
+          borderTop: `2px dashed ${theme.borderline_card_color}`,
+          borderColor: theme.borderline_card_color,
           opacity: 0.5,
         }}
       >
@@ -356,7 +356,7 @@ const RepoContent = ({ theme }) => {
           <a
             href="mailto:arrafipamungkas23@gmail.com"
             className="ml-2 no-underline font-bold py-1 px-2 rounded transition-all duration-200 ease-in-out hover:underline hover:bg-black/5 hover:-translate-y-px"
-            style={{ color: theme.accent }}
+            style={{ color: theme.accent_color }}
           >
             arrafipamungkas23@gmail.com
           </a>

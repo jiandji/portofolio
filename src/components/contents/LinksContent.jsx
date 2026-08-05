@@ -67,7 +67,7 @@ const LinksContent = ({ theme }) => {
     <div className="flex flex-col items-center gap-[15px] w-full min-w-[300px]">
       <div
         className="mt-[10px] text-[0.7rem] font-extrabold tracking-[1px] opacity-60 uppercase font-['Manrope']"
-        style={{ color: theme.textSecondary }}
+        style={{ color: theme.text_secondary_color }}
       >
         [APPS INSTALLED]
       </div>
@@ -80,13 +80,13 @@ const LinksContent = ({ theme }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center justify-center gap-[8px] no-underline transition-transform duration-200 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:scale-110"
-            style={{ color: theme.text }}
+            style={{ color: theme.text_color }}
           >
             <div
               className="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.1)] max-[360px]:w-[50px] max-[360px]:h-[50px]"
               style={{
                 backgroundColor: link.bg,
-                border: `2px solid ${theme.border_line_card || "transparent"}`,
+                border: `2px solid ${theme.borderline_card_color || "transparent"}`,
               }}
             >
               <img

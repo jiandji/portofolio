@@ -99,14 +99,14 @@ const HelpsContent = ({ theme }) => {
       className="flex flex-col h-[60vh] w-[400px] max-w-[90vw] rounded-[20px] overflow-hidden font-sans max-[600px]:h-[75vh]"
       style={{
         backgroundColor: theme.card_color,
-        color: theme.text,
+        color: theme.text_color,
       }}
     >
       <div
         className="px-5 py-[15px] text-[0.8rem] font-extrabold tracking-[1px] opacity-80 flex items-center gap-2"
-        style={{ borderBottom: `1px dashed ${theme.border_line_card}` }}
+        style={{ borderBottom: `1px dashed ${theme.borderline_card_color}` }}
       >
-        <span style={{ color: theme.accent }}>●</span> LIVE CHAT WITH AI
+        <span style={{ color: theme.accent_color }}>●</span> LIVE CHAT WITH AI
       </div>
 
       {/* AREA CHAT (SCROLLABLE) */}
@@ -125,7 +125,7 @@ const HelpsContent = ({ theme }) => {
                   src={botAvatar}
                   alt="Bot"
                   className="w-[35px] h-[35px] rounded-full object-cover border-2 bg-white flex-shrink-0 max-[600px]:w-[30px] max-[600px]:h-[30px]"
-                  style={{ borderColor: theme.border_line_card }}
+                  style={{ borderColor: theme.borderline_card_color }}
                 />
               )}
 
@@ -133,10 +133,10 @@ const HelpsContent = ({ theme }) => {
               <div
                 className="p-[12px_16px] text-[0.9rem] leading-[1.5] shadow-sm relative break-words whitespace-pre-wrap"
                 style={{
-                  backgroundColor: isUser ? theme.accent : theme.highlight,
-                  color: isUser ? theme.btnText : theme.text,
+                  backgroundColor: isUser ? theme.accent_color : theme.highlight_color,
+                  color: isUser ? theme.btn_text_color : theme.text_color,
                   border: `1px solid ${
-                    isUser ? theme.accent : theme.border_line_card
+                    isUser ? theme.accent_color : theme.borderline_card_color
                   }`,
                   borderRadius: isUser
                     ? "15px 15px 0 15px"
@@ -151,7 +151,7 @@ const HelpsContent = ({ theme }) => {
                   src={userAvatar}
                   alt="User"
                   className="w-[35px] h-[35px] rounded-full object-cover border-2 bg-white flex-shrink-0 max-[600px]:w-[30px] max-[600px]:h-[30px]"
-                  style={{ borderColor: theme.border_line_card }}
+                  style={{ borderColor: theme.borderline_card_color }}
                 />
               )}
             </div>
@@ -165,11 +165,11 @@ const HelpsContent = ({ theme }) => {
               src={botAvatar}
               alt="Bot"
               className="w-[35px] h-[35px] rounded-full object-cover border-2 bg-white flex-shrink-0 max-[600px]:w-[30px] max-[600px]:h-[30px]"
-              style={{ borderColor: theme.border_line_card }}
+              style={{ borderColor: theme.borderline_card_color }}
             />
             <div
               className="p-[8px_16px] font-bold text-[#888] rounded-[15px_15px_15px_0] shadow-sm"
-              style={{ backgroundColor: theme.highlight }}
+              style={{ backgroundColor: theme.highlight_color }}
             >
               <span className="inline-block mx-[1px] animate-[bounce_1.4s_infinite_-0.32s]">
                 .
@@ -191,7 +191,7 @@ const HelpsContent = ({ theme }) => {
       <form
         className="p-[15px] flex gap-2.5 bg-black/5"
         onSubmit={handleSend}
-        style={{ borderTop: `1px dashed ${theme.border_line_card}` }}
+        style={{ borderTop: `1px dashed ${theme.borderline_card_color}` }}
       >
         <input
           type="text"
@@ -201,9 +201,9 @@ const HelpsContent = ({ theme }) => {
           disabled={isLoading}
           className="flex-1 p-[12px_15px] rounded-[25px] border border-black/10 outline-none text-[0.9rem] transition-all duration-200 focus:ring-2 focus:ring-gray-400/20"
           style={{
-            color: theme.text,
+            color: theme.text_color,
             backgroundColor:
-              theme.bg === "#0B1120" ? "rgba(255,255,255,0.05)" : "#f9f9f9",
+              theme.bg_color === "#0B1120" ? "rgba(255,255,255,0.05)" : "#f9f9f9",
           }}
         />
         <button
@@ -211,8 +211,8 @@ const HelpsContent = ({ theme }) => {
           disabled={isLoading || !input.trim()}
           className="px-5 rounded-[25px] border-none font-extrabold text-[0.8rem] cursor-pointer transition-transform duration-100 hover:enabled:scale-105 hover:enabled:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed"
           style={{
-            backgroundColor: theme.accent,
-            color: theme.btnText,
+            backgroundColor: theme.accent_color,
+            color: theme.btn_text_color,
           }}
         >
           SEND
